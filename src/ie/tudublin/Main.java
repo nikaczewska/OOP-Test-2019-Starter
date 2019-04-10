@@ -1,7 +1,10 @@
 package ie.tudublin;
 
+import java.util.ArrayList;
+
 public class Main
 {	
+	ArrayList<Colour> colours = new ArrayList<Colour>();
 
 	public void helloProcessing()
 	{
