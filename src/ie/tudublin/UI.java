@@ -14,6 +14,12 @@ public class UI extends PApplet
     public int b;
 	public int value;
 	public int resistorValue;
+	public int x;
+	public int y;
+	public int resistorWidth;
+	public int resistorHeight;
+	public int gap;
+
 	private String colour;
 	Table table;
 	Table table2;
@@ -26,7 +32,7 @@ public class UI extends PApplet
 		table2 = loadTable("resistors.csv");
 		for (TableRow row : table2.rows())
 		{
-			resistorValue = row.getInt(b);
+			resistorValue = row.getInt("");
 			resistors.add(new Resistor(resistorValue));
 		}
 	}
@@ -52,7 +58,6 @@ public class UI extends PApplet
 	{
 		for (int i = 0; i < 5; i++) {
 			Colour colour = colours.get(i);
-			colour.display();
 		  }
 	}
 
@@ -60,12 +65,12 @@ public class UI extends PApplet
 	{
 		if(value == 0)
 		{
-			return Colour.colour;
+			return colours.getColour(0);
 		}
 		
 		if(value == 1)
 		{
-			return Colour(1);
+			return colours.getColour(1);
 		}
 	}
 	
@@ -94,5 +99,18 @@ public class UI extends PApplet
 	
 	public void draw()
 	{			
+		x = 150;
+		y = 50;
+		gap = 50;
+		resistorHeight = 100;
+		resistorWidth = 150;
+
+		for(int i = 0; i < 4; i++)
+		{
+			rect(x,y,resistorWidth, resistorHeight);
+			y = y + gap * 4;
+
+		}
+
 	}
 }

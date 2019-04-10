@@ -16,6 +16,11 @@ public class Resistor
         System.out.println(tens + ",");
         System.out.println(ones);
 
-	}
+    }
+    
+    public void render()
+    {
+        
+    }
 
 }
