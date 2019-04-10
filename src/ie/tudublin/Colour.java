@@ -10,20 +10,16 @@ public class Colour
     public int value;
     private String colour;
 
-    public Colour(String colour2) {
-	}
+    public Colour(int r, int g, int b, int value, String colour) {
 
-	public void Colour(int r, int g, int b,int value, String colour)
-    {
         this.r = r;
         this.g = g;
         this.b = b;
         this.colour = colour;
         this.value = value;
+	}
 
-    }
-
-    public String toString()
+	public String toString()
     {
         return colour + "\t" + value;
     }
