@@ -111,6 +111,10 @@ public class UI extends PApplet
 			rect(x,y,resistorWidth, resistorHeight);
 			line(x,y + gap,x - 100, y + gap);
 			line(x+resistorWidth, y + gap, x+resistorWidth + 100, y + gap);
+			fill(0);
+			rect(x + 20, y, 10, resistorHeight);
+			rect(x + 40, y, 10, resistorHeight);
+			rect(x + 60, y, 10, resistorHeight);
 			y = y + gap * 4;
 
 
