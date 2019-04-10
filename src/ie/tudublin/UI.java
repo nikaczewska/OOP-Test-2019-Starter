@@ -61,17 +61,16 @@ public class UI extends PApplet
 		  }
 	}
 
-	public Colour findColour(int value)
+	public String findColour(int value)
 	{
-		if(value == 0)
+		for(int i = 0; i < 10; i++)
 		{
-			return colours.getColour(0);
+			if(i == value)
+			{
+				return colour.getColour();
+			}
 		}
-		
-		if(value == 1)
-		{
-			return colours.getColour(1);
-		}
+
 	}
 	
 	public void separate(int value)
@@ -111,10 +110,17 @@ public class UI extends PApplet
 			rect(x,y,resistorWidth, resistorHeight);
 			line(x,y + gap,x - 100, y + gap);
 			line(x+resistorWidth, y + gap, x+resistorWidth + 100, y + gap);
-			fill(0);
+			/*The fill() would use parameters from the colours ArrayList to generate the correct colour for each rectangle*/ 
+			//fill();
 			rect(x + 20, y, 10, resistorHeight);
+			//fill();
 			rect(x + 40, y, 10, resistorHeight);
+			//fill();
 			rect(x + 60, y, 10, resistorHeight);
+
+			textAlign(CENTER,CENTER);
+	
+
 			y = y + gap * 4;
 
 
