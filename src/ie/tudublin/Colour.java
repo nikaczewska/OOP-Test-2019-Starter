@@ -4,18 +4,22 @@ import processing.data.Table;
 
 public class Colour
 {
-    Table table;
     public int r;
     public int g;
     public int b;
     public int value;
     private String colour;
 
-    public void Colour(int value, String colour)
+    public Colour(String colour2) {
+	}
+
+	public void Colour(int r, int g, int b,int value, String colour)
     {
+        this.r = r;
+        this.g = g;
+        this.b = b;
         this.colour = colour;
         this.value = value;
-
 
     }
 
@@ -23,5 +27,8 @@ public class Colour
     {
         return colour + "\t" + value;
     }
+
+	public void display() {
+	}
 
 }
