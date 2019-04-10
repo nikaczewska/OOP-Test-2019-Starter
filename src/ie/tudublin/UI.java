@@ -107,8 +107,12 @@ public class UI extends PApplet
 
 		for(int i = 0; i < 4; i++)
 		{
+			noFill();
 			rect(x,y,resistorWidth, resistorHeight);
+			line(x,y + gap,x - 100, y + gap);
+			line(x+resistorWidth, y + gap, x+resistorWidth + 100, y + gap);
 			y = y + gap * 4;
+
 
 		}
 
