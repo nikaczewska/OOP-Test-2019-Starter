@@ -9,6 +9,7 @@ import processing.data.TableRow;
 public class UI extends PApplet
 
 {	
+	
 	public int r;
     public int g;
     public int b;
@@ -127,7 +128,7 @@ public class UI extends PApplet
 			rect(x + 60, y, 10, resistorHeight);
 
 			textAlign(CENTER,CENTER);
-			//text(resistors.hundreds + resistors.tens + resistors.ones);
+			text(resistorValue, x + resistorWidth, y);
 	
 
 			y = y + gap * 4;
