@@ -19,6 +19,8 @@ public class UI extends PApplet
 	public int resistorWidth;
 	public int resistorHeight;
 	public int gap;
+	public String colourFound;
+	Colour colour1;
 
 	private String colour;
 	Table table;
@@ -57,7 +59,7 @@ public class UI extends PApplet
 	public void printColours()
 	{
 		for (int i = 0; i < 5; i++) {
-			Colour colour = colours.get(i);
+			colour1 = colours.get(i);
 		  }
 	}
 
@@ -67,9 +69,15 @@ public class UI extends PApplet
 		{
 			if(i == value)
 			{
-				return colour.getColour();
+				colourFound = colour1.getColour();
+			}
+			else
+			{
+				colourFound = "No match";
 			}
 		}
+		return colourFound;
+	
 
 	}
 	
@@ -111,7 +119,7 @@ public class UI extends PApplet
 			line(x,y + gap,x - 100, y + gap);
 			line(x+resistorWidth, y + gap, x+resistorWidth + 100, y + gap);
 			/*The fill() would use parameters from the colours ArrayList to generate the correct colour for each rectangle*/ 
-			//fill();
+			//fill(colour1.r, colour1.g, colour1.b);
 			rect(x + 20, y, 10, resistorHeight);
 			//fill();
 			rect(x + 40, y, 10, resistorHeight);
@@ -119,6 +127,7 @@ public class UI extends PApplet
 			rect(x + 60, y, 10, resistorHeight);
 
 			textAlign(CENTER,CENTER);
+			//text(resistors.hundreds + resistors.tens + resistors.ones);
 	
 
 			y = y + gap * 4;
